@@ -42,14 +42,22 @@
                             <?= 
                             form_open('login');
 
+                            if ($this->session->flashdata('pesan')) {
+                                echo '<div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+                                echo $this->session->flashdata('pesan');
+                                echo '</div>';
+                            }
+
+
                             ?>
                             
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                        <input class="form-control" placeholder="Username" name="username" type="text" autofocus required>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                        <input class="form-control" placeholder="Password" name="password" type="password" required>
                                     </div>
                                     <div class="checkbox">
                                         <label>
